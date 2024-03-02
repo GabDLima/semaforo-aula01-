@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+    <span class="vermelho1"></span>
+    <span class="vermelho2"></span>
+    <span class="vermelho3"></span>
+  </div>
+
+  <script>
+  const vermelho1 = document.querySelector('.vermelho1');const vermelho2 = document.querySelector('.vermelho2');const vermelho3 = document.querySelector('.vermelho3');
+
+let contador = 1;
+
+setInterval(() => {
+	if(contador <= 1) {
+		vermelho1.classList.add('vermelho-ativo1');
+	} else if (contador === 2) {
+		vermelho2.classList.add('vermelho-ativo2');
+	} else if (contador === 4) {
+		vermelho3.classList.add('vermelho-ativo3');
+	} else if (contador === 6) {
+		vermelho1.classList.remove('vermelho-ativo1');
+    vermelho2.classList.remove('vermelho-ativo2');
+    vermelho3.classList.remove('vermelho-ativo3');
+		contador = 0;
+	}
+	
+	contador += 1;
+}, 1000);
+
+
+</script>
+</body>
+</html>
